@@ -44,6 +44,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/login/login.component */ "./src/app/pages/login/login.component.ts");
 /* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
 /* harmony import */ var _pages_survey_ans_survey_ans_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/survey-ans/survey-ans.component */ "./src/app/pages/survey-ans/survey-ans.component.ts");
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
+/* harmony import */ var _mysurveys_mysurveys_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./mysurveys/mysurveys.component */ "./src/app/mysurveys/mysurveys.component.ts");
+
+
 
 
 
@@ -57,6 +61,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: 'home', component: _pages_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], data: { title: 'Home' } },
+    { path: 'mysurveys', component: _mysurveys_mysurveys_component__WEBPACK_IMPORTED_MODULE_12__["MysurveysComponent"], data: { title: 'MySurvey' } },
+    { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_11__["ProfileComponent"], data: { title: 'Profile' } },
     { path: 'dashboard', component: _pages_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], data: { title: 'Home' } },
     { path: 'about', component: _pages_about_about_component__WEBPACK_IMPORTED_MODULE_4__["AboutComponent"], data: { title: 'About' } },
     { path: 'surveys', component: _pages_surveys_surveys_component__WEBPACK_IMPORTED_MODULE_6__["SurveysComponent"], data: { title: 'Surveys' } },
@@ -169,6 +175,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_login_login_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/login/login.component */ "./src/app/pages/login/login.component.ts");
 /* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
 /* harmony import */ var _pages_survey_ans_survey_ans_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/survey-ans/survey-ans.component */ "./src/app/pages/survey-ans/survey-ans.component.ts");
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
+/* harmony import */ var _mysurveys_mysurveys_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./mysurveys/mysurveys.component */ "./src/app/mysurveys/mysurveys.component.ts");
+
+
 
 
 
@@ -208,7 +218,9 @@ var AppModule = /** @class */ (function () {
                 _pages_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_13__["PagenotfoundComponent"],
                 _pages_register_register_component__WEBPACK_IMPORTED_MODULE_16__["RegisterComponent"],
                 _pages_login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"],
-                _pages_survey_ans_survey_ans_component__WEBPACK_IMPORTED_MODULE_19__["SurveyAnsComponent"]
+                _pages_survey_ans_survey_ans_component__WEBPACK_IMPORTED_MODULE_19__["SurveyAnsComponent"],
+                _profile_profile_component__WEBPACK_IMPORTED_MODULE_20__["ProfileComponent"],
+                _mysurveys_mysurveys_component__WEBPACK_IMPORTED_MODULE_21__["MysurveysComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -373,6 +385,94 @@ var User = /** @class */ (function () {
     function User() {
     }
     return User;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/mysurveys/mysurveys.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/mysurveys/mysurveys.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL215c3VydmV5cy9teXN1cnZleXMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/mysurveys/mysurveys.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/mysurveys/mysurveys.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n      <div class=\"col-md-offset-3 col-md-6\">\n          <br>\n          <br>\n\n     <h1 style=\"margin-left:60%; width:150%\">Surveys Available</h1>\n          <br>\n          <table class=\"table table-bordered table-striped table-hover\" style=\"width:220%\">\n              <!-- Header Row-->\n              <tr>\n                  <th class=\"text-center\">Time</th>\n                  <th class=\"text-center\">Questions</th>\n                  <th class=\"text-center\">Points</th>\n                  <th class=\"text-center\"></th>\n              </tr>\n\n              <!-- Repeatable Template Row -->\n                  <tr *ngFor=\"let survey of surveys\">\n                      <td class=\"text-center\">{{ survey.time }}</td>\n                      <td class=\"text-center\">{{ survey.questions }}</td>\n                      <td class=\"text-center\">{{ survey.points }}</td>\n\n                      <td class=\"text-center\">\n                      <a routerLink=\"/surveys/survey-list/{{ survey.surveyid }}\"\n                          class=\"btn btn-primary\"><i class=\"fas fa-pencil-alt\"></i> Take Survey Now</a>\n                      </td>\n\n\n                  </tr>\n          </table>\n\n      </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/mysurveys/mysurveys.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/mysurveys/mysurveys.component.ts ***!
+  \**************************************************/
+/*! exports provided: MysurveysComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MysurveysComponent", function() { return MysurveysComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_services_survey_list_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/survey-list.service */ "./src/app/services/survey-list.service.ts");
+/* harmony import */ var _models_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/user */ "./src/app/models/user.ts");
+
+
+
+
+
+var MysurveysComponent = /** @class */ (function () {
+    function MysurveysComponent(SurveyListService, router, user) {
+        this.SurveyListService = SurveyListService;
+        this.router = router;
+        this.user = user;
+    }
+    MysurveysComponent.prototype.ngOnInit = function () {
+        this.surveys = new Array();
+        this.user = new _models_user__WEBPACK_IMPORTED_MODULE_4__["User"]();
+        this.loadToken();
+        this.displaySurveyListbyUser();
+    };
+    MysurveysComponent.prototype.displaySurveyListbyUser = function () {
+        var _this = this;
+        this.SurveyListService.getList1(this.user).subscribe(function (data) {
+            if (data.success) {
+                _this.surveys = data.surveyList;
+                console.log(data);
+            }
+            else {
+                console.log(data);
+                _this.router.navigate(['/login']);
+            }
+        });
+    };
+    MysurveysComponent.prototype.loadToken = function () {
+        var token = localStorage.getItem('id_token');
+        this.user = JSON.parse(localStorage.getItem('user'));
+    };
+    MysurveysComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-mysurveys',
+            template: __webpack_require__(/*! ./mysurveys.component.html */ "./src/app/mysurveys/mysurveys.component.html"),
+            styles: [__webpack_require__(/*! ./mysurveys.component.css */ "./src/app/mysurveys/mysurveys.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_survey_list_service__WEBPACK_IMPORTED_MODULE_3__["SurveyListService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _models_user__WEBPACK_IMPORTED_MODULE_4__["User"]])
+    ], MysurveysComponent);
+    return MysurveysComponent;
 }());
 
 
@@ -1063,7 +1163,7 @@ module.exports = "li {\n    margin-left: 60%;\n    \n    }\n    \n    ul{\n     
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" style=\"    text-align: center;\ndisplay: -webkit-box;\">\n\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t  <img src=\"29f96fda-e01e-4503-8015-b3f0a02affb6.png\" alt=\"\">\n  </a>\n\t\t<button\n\t\t  class=\"navbar-toggler\"\n\t\t  type=\"button\"\n\t\t  data-toggle=\"collapse\"\n\t\t  data-target=\"#navbarSupportedContent\"\n\t\t  aria-controls=\"navbarSupportedContent\"\n\t\t  aria-expanded=\"false\"\n\t\t  aria-label=\"Toggle navigation\"\n\t\t>\n\t\t  <span class=\"navbar-toggler-icon\"></span>\n\t\t</button>\n  \n\t\t<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n\t\t  <ul class=\"navbar-nav ml-auto\" style=\"padding-left:100%\">\n\t\t  <li  *ngIf=\"!isLoggedIn()\" class=\"nav-item\">\n\t\t\t  <a class=\"nav-link\" routerLink=\"/\">\n\t\t\t\t\t<i class=\"fas fa-archway\"></i> Home</a>\n\t\t\t</li>\n\n\t\t\t<li  *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n\t\t\t  <a class=\"nav-link\" routerLink=\"/dashboard\">\n\t\t\t\t\t<i class=\"fas fa-archway\"></i> Dashboard</a>\n\t\t\t</li>\n\n\t\t\t<li class=\"nav-item\">\n\t\t\t  <a class=\"nav-link\" routerLink=\"/surveys\"\n\t\t\t\t><i class=\"fas fa-poll\"></i>Surveys</a\n\t\t\t  >\n\t\t\t</li>\n\t\t\t  <li class=\"nav-item\">\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/about\"\n\t\t\t\t  ><i class=\"fas fa-id-card\"></i> About  </a\n\t\t\t  >\n\t\t\t</li>\n\n\t\t\t<li *ngIf=\"isLoggedIn()\">\n\t\t\t\t<button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n\t\t\t\t\t<i class=\"fas fa-user-circle\"></i> {{ user.displayName}}\n\t\t\t\t</button>\n\t\t\t\t<div class=\"dropdown\">\n\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n\t\t\t\t\t<a class=\"dropdown-item\" routerLink=\"/home\" class=\"dropdown-item\"><i class=\"fas fa-users\"></i> Profile </a>\n\t\t\t\t\t<a class=\"dropdown-item\" routerLink=\"/home\" class=\"dropdown-item\"><i class=\"far fa-plus-square\"></i> Create a Survey </a>\n\t\t\t\t\t<a class=\"dropdown-item\" routerLink=\"/home\" class=\"dropdown-item\"><i class=\"fab fa-accusoft\"></i> My Surveys</a>\n\t\t\t\t\t<a (click)=\"onLogoutClick()\" routerLink=\"/logout\" class=\"dropdown-item\">\n\t\t\t\t\t\t<i class=\"fas fa-lg fa-sign-out-alt\"></i> Logout</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t</li>\n\n\n\t\t\t<li *ngIf=\"!isLoggedIn()\" class=\"nav-item\"><a routerLink=\"/login\" class=\"nav-link\">\n\t\t\t\t<i class=\"fas fa-lg fa-sign-in-alt\"></i> Login</a></li> \n\t\t  </ul>\n\t\t</div>\n\t  </nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" style=\"    text-align: center;\ndisplay: -webkit-box;\">\n\t\t<a class=\"navbar-brand\" routerLink=\"/\">\n\t\t  <img src=\"29f96fda-e01e-4503-8015-b3f0a02affb6.png\" alt=\"\">\n  </a>\n\t\t<button\n\t\t  class=\"navbar-toggler\"\n\t\t  type=\"button\"\n\t\t  data-toggle=\"collapse\"\n\t\t  data-target=\"#navbarSupportedContent\"\n\t\t  aria-controls=\"navbarSupportedContent\"\n\t\t  aria-expanded=\"false\"\n\t\t  aria-label=\"Toggle navigation\"\n\t\t>\n\t\t  <span class=\"navbar-toggler-icon\"></span>\n\t\t</button>\n  \n\t\t<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n\t\t  <ul class=\"navbar-nav ml-auto\" style=\"padding-left:100%\">\n\t\t  <li  *ngIf=\"!isLoggedIn()\" class=\"nav-item\">\n\t\t\t  <a class=\"nav-link\" routerLink=\"/\">\n\t\t\t\t\t<i class=\"fas fa-archway\"></i> Home</a>\n\t\t\t</li>\n\n\t\t\t<li  *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n\t\t\t  <a class=\"nav-link\" routerLink=\"/dashboard\">\n\t\t\t\t\t<i class=\"fas fa-archway\"></i> Dashboard</a>\n\t\t\t</li>\n\n\t\t\t<li class=\"nav-item\">\n\t\t\t  <a class=\"nav-link\" routerLink=\"/surveys\"\n\t\t\t\t><i class=\"fas fa-poll\"></i>Surveys</a\n\t\t\t  >\n\t\t\t</li>\n\t\t\t  <li class=\"nav-item\">\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/about\"\n\t\t\t\t  ><i class=\"fas fa-id-card\"></i> About  </a\n\t\t\t  >\n\t\t\t</li>\n\n\t\t\t<li *ngIf=\"isLoggedIn()\">\n\t\t\t\t<button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n\t\t\t\t\t<i class=\"fas fa-user-circle\"></i> {{ user.displayName}}\n\t\t\t\t</button>\n\t\t\t\t<div class=\"dropdown\">\n\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n\t\t\t\t\t<a class=\"dropdown-item\" routerLink=\"/profile\" class=\"dropdown-item\"><i class=\"fas fa-users\"></i> Profile </a>\n\t\t\t\t\t<a class=\"dropdown-item\" routerLink=\"/home\" class=\"dropdown-item\"><i class=\"far fa-plus-square\"></i> Create a Survey </a>\n\t\t\t\t\t<a class=\"dropdown-item\" routerLink=\"/mysurveys\" class=\"dropdown-item\"><i class=\"fab fa-accusoft\"></i> My Surveys</a>\n\t\t\t\t\t<a (click)=\"onLogoutClick()\" routerLink=\"/logout\" class=\"dropdown-item\">\n\t\t\t\t\t\t<i class=\"fas fa-lg fa-sign-out-alt\"></i> Logout</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t</li>\n\n\n\t\t\t<li *ngIf=\"!isLoggedIn()\" class=\"nav-item\"><a routerLink=\"/login\" class=\"nav-link\">\n\t\t\t\t<i class=\"fas fa-lg fa-sign-in-alt\"></i> Login</a></li> \n\t\t  </ul>\n\t\t</div>\n\t  </nav>"
 
 /***/ }),
 
@@ -1124,6 +1224,70 @@ var HeaderComponent = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/profile/profile.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/profile/profile.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "body {\r\n    font-family: Arial;\r\n  }\r\n  \r\n  .coupon {\r\n    border: 5px dotted #bbb;\r\n    width: 80%;\r\n    border-radius: 15px;\r\n    margin: 0 auto;\r\n    max-width: 600px;\r\n  }\r\n  \r\n  .container {\r\n    padding: 2px 16px;\r\n    background-color: #f1f1f1;\r\n  }\r\n  \r\n  .promo {\r\n    background: #ccc;\r\n    padding: 3px;\r\n  }\r\n  \r\n  .expire {\r\n    color: red;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZmlsZS9wcm9maWxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7RUFDcEI7O0VBRUE7SUFDRSx1QkFBdUI7SUFDdkIsVUFBVTtJQUNWLG1CQUFtQjtJQUNuQixjQUFjO0lBQ2QsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsaUJBQWlCO0lBQ2pCLHlCQUF5QjtFQUMzQjs7RUFFQTtJQUNFLGdCQUFnQjtJQUNoQixZQUFZO0VBQ2Q7O0VBRUE7SUFDRSxVQUFVO0VBQ1oiLCJmaWxlIjoic3JjL2FwcC9wcm9maWxlL3Byb2ZpbGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xyXG4gICAgZm9udC1mYW1pbHk6IEFyaWFsO1xyXG4gIH1cclxuICBcclxuICAuY291cG9uIHtcclxuICAgIGJvcmRlcjogNXB4IGRvdHRlZCAjYmJiO1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICAgIG1heC13aWR0aDogNjAwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5jb250YWluZXIge1xyXG4gICAgcGFkZGluZzogMnB4IDE2cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xyXG4gIH1cclxuICBcclxuICAucHJvbW8ge1xyXG4gICAgYmFja2dyb3VuZDogI2NjYztcclxuICAgIHBhZGRpbmc6IDNweDtcclxuICB9XHJcbiAgXHJcbiAgLmV4cGlyZSB7XHJcbiAgICBjb2xvcjogcmVkO1xyXG4gIH0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/profile/profile.component.html":
+/*!************************************************!*\
+  !*** ./src/app/profile/profile.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n</head>\n<body>\n<br>\n<br>\n<div class=\"coupon\">\n  <div class=\"container\">\n    <h3>{{user.displayName}}</h3>\n  </div>\n  <div class=\"container\" style=\"background-color:white\">\n    <h2><b>{{user.email}}</b></h2> \n    \n  </div>\n  <div class=\"container\">\n    <p>Username <span class=\"promo\">{{user.username}}</span></p>\n  </div>\n</div>\n\n</body>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/profile/profile.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/profile/profile.component.ts ***!
+  \**********************************************/
+/*! exports provided: ProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileComponent", function() { return ProfileComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/user */ "./src/app/models/user.ts");
+
+
+
+var ProfileComponent = /** @class */ (function () {
+    function ProfileComponent() {
+        this.authToken = null;
+        this.user = new _models_user__WEBPACK_IMPORTED_MODULE_2__["User"]();
+    }
+    ProfileComponent.prototype.ngOnInit = function () {
+        this.loadToken();
+    };
+    ProfileComponent.prototype.loadToken = function () {
+        this.user = JSON.parse(localStorage.getItem('user'));
+    };
+    ProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-profile',
+            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/profile/profile.component.html"),
+            styles: [__webpack_require__(/*! ./profile.component.css */ "./src/app/profile/profile.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ProfileComponent);
+    return ProfileComponent;
 }());
 
 
@@ -1236,6 +1400,11 @@ var SurveyListService = /** @class */ (function () {
         this.loadToken();
         console.log(this.http.get(this.endpoint, this.httpOptions));
         return this.http.get(this.endpoint, this.httpOptions);
+    };
+    SurveyListService.prototype.getList1 = function (user1) {
+        this.loadToken();
+        console.log(this.http.get(this.endpoint, this.httpOptions));
+        return this.http.get(this.endpoint + 'surveys/survey-list/user/' + user1.email, this.httpOptions);
     };
     SurveyListService.prototype.getSurvey = function (survey) {
         this.loadToken();
