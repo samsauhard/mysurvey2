@@ -13,7 +13,6 @@ export class AuthService {
 
   private endpoint = 'https://portfoliomean.herokuapp.com/api/';
 
-
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
