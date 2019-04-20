@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="    text-align: center;
+display: -webkit-box;">
+		<a class="navbar-brand" routerLink="/">
+		  <img src="29f96fda-e01e-4503-8015-b3f0a02affb6.png" alt="">
+  </a>
+		<button
+		  class="navbar-toggler"
+		  type="button"
+		  data-toggle="collapse"
+		  data-target="#navbarSupportedContent"
+		  aria-controls="navbarSupportedContent"
+		  aria-expanded="false"
+		  aria-label="Toggle navigation"
+		>
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+  
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav ml-auto" style="padding-left:100%">
+		  <li  *ngIf="!isLoggedIn()" class="nav-item">
+			  <a class="nav-link" routerLink="/">
+					<i class="fas fa-archway"></i> Home</a>
+			</li>
+
+			<li  *ngIf="isLoggedIn()" class="nav-item">
+			  <a class="nav-link" routerLink="/dashboard">
+					<i class="fas fa-archway"></i> Dashboard</a>
+			</li>
+
+			<li class="nav-item">
+			  <a class="nav-link" routerLink="/surveys"
+				><i class="fas fa-poll"></i>Surveys</a
+			  >
+			</li>
+			  <li class="nav-item">
+				<a class="nav-link" routerLink="/about"
+				  ><i class="fas fa-id-card"></i> About  </a
+			  >
+			</li>
+
+			<li *ngIf="isLoggedIn()">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-user-circle"></i> {{ user.displayName}}
+				</button>
+				<div class="dropdown">
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" routerLink="/home" class="dropdown-item"><i class="fas fa-users"></i> Profile </a>
+					<a class="dropdown-item" routerLink="/home" class="dropdown-item"><i class="far fa-plus-square"></i> Create a Survey </a>
+					<a class="dropdown-item" routerLink="/home" class="dropdown-item"><i class="fab fa-accusoft"></i> My Surveys</a>
+					<a (click)="onLogoutClick()" routerLink="/logout" class="dropdown-item">
+						<i class="fas fa-lg fa-sign-out-alt"></i> Logout</a>
+				</div>
+			</div>
+			</li>
+
+
+			<li *ngIf="!isLoggedIn()" class="nav-item"><a routerLink="/login" class="nav-link">
+				<i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li> 
+		  </ul>
+		</div>
+	  </nav>

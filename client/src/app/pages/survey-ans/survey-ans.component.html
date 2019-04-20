@@ -1,0 +1,29 @@
+<div class="container">
+<form autocomplete="off" (submit)="onAnswerSubmit()"  ng-model-options="{ form-control : 'standalone' }">
+    <div class="form-group">
+
+<br><h1>Survey Questions</h1><br>
+  
+    <p>Posted By : {{email}}</p><br>
+    
+
+  <div *ngFor="let queslist of questions" class="jumbotron">
+
+  {{queslist.question}}<br>
+  <fieldset class="form-group  text-center">
+  <input type="radio" [(ngModel)]= "queslist.ans" class="form-control" name={{queslist.question}} value={{queslist.option1}}>{{queslist.option1}}<BR>
+  <input type="radio" [(ngModel)]= "queslist.ans" class="form-control" name={{queslist.question}} value={{queslist.option2}}>{{queslist.option2}}<BR>
+  <input type="radio" [(ngModel)]= "queslist.ans" class="form-control" name={{queslist.question}} value={{queslist.option3}}>{{queslist.option3}}<BR>
+  <input type="radio" [(ngModel)]= "queslist.ans" class="form-control" name={{queslist.question}} value={{queslist.option4}}>{{queslist.option4}}<BR>
+  </fieldset>
+   
+  </div>
+  <fieldset class="form-group text-center">
+      <input type="submit" class="btn btn-success" value="Submit">
+      <a routerLink="/home">
+        <input type="button" class="btn btn-warning" value="Cancel">
+      </a>
+  </fieldset>
+</div>
+</form> 
+</div>
