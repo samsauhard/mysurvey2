@@ -14,6 +14,7 @@ export class SurveyListService {
   private user: User;
   private authToken: any = null;
   private authService: AuthService;
+  
   private endpoint = 'https://surveyappmean.herokuapp.com/surveys/survey-list/';
 
   //private endpoint = 'https://portfoliomean.herokuapp.com/api/contact-list/';
@@ -26,7 +27,6 @@ export class SurveyListService {
     })
   };
   
-
   constructor(private http: HttpClient) {
     this.user = new User();
   }
@@ -47,7 +47,7 @@ export class SurveyListService {
     surveyanswer.email = this.user.email;
     console.log(JSON.stringify(surveyanswer.ans));
     console.log(this.user);
-    return this.http.post<any>(this.endpoint + 'add', JSON.stringify(surveyanswer), this.httpOptions);
+    return this.http.post<any>(this.endpoint + 'add', surveyanswer, this.httpOptions);
   }
 /*
   public editContact(contact: Contact): Observable<any> {
