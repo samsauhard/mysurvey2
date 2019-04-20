@@ -1221,7 +1221,7 @@ var SurveyListService = /** @class */ (function () {
     function SurveyListService(http) {
         this.http = http;
         this.authToken = null;
-        this.endpoint = 'http://surveyappmean:3000/surveys/survey-list/';
+        this.endpoint = 'https://surveyappmean.herokuapp.com/surveys/survey-list/';
         //private endpoint = 'https://portfoliomean.herokuapp.com/api/contact-list/';
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
@@ -1246,7 +1246,7 @@ var SurveyListService = /** @class */ (function () {
         surveyanswer.email = this.user.email;
         console.log(JSON.stringify(surveyanswer.ans));
         console.log(this.user);
-        return this.http.post(this.endpoint + 'add', JSON.stringify(surveyanswer), this.httpOptions);
+        return this.http.post(this.endpoint + 'add', surveyanswer, this.httpOptions);
     };
     /*
       public editContact(contact: Contact): Observable<any> {
