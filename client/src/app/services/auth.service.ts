@@ -11,7 +11,7 @@ export class AuthService {
   user: User;
   private authToken: any;
 
-  private endpoint = 'http://surveyappmean.herokuapp.com/api';
+  private endpoint = 'https://portfoliomean.herokuapp.com/api/';
 
 
   private httpOptions = {
