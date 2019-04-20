@@ -41,5 +41,7 @@ router.get('/', passport.authenticate('jwt', {session: false}), surveyController
 
 router.get('/:id', passport.authenticate('jwt', {session: false}), surveyController.displaySurvey);
 
+router.get('/user/:id', passport.authenticate('jwt', {session: false}), surveyController.displaySurveyListByUser);
+
 
 module.exports = router;

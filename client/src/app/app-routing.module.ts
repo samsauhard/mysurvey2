@@ -8,9 +8,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SurveyAnsComponent } from './pages/survey-ans/survey-ans.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MysurveysComponent } from './mysurveys/mysurveys.component';
 
 const routes: Routes = [ 
   {path: 'home', component: HomeComponent, data: {title: 'Home'}},
+  {path: 'mysurveys', component: MysurveysComponent, data: {title: 'MySurvey'}},
+  {path: 'profile', component: ProfileComponent, data: {title: 'Profile'}},
   {path: 'dashboard', component: HomeComponent, data: {title: 'Home'}},
   {path: 'about', component: AboutComponent, data: {title: 'About'}},
   {path: 'surveys', component: SurveysComponent, data: {title: 'Surveys'}}, 

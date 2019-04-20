@@ -46,6 +46,19 @@ module.exports.displaysurveyList = (req, res, next) =>{
     });
 }
 
+module.exports.displaysurveyListUser = (req, res, next) =>{
+    let id = req.params.id;
+    listofsurveys.find({email: id},(err,survey) => {
+        if(err) {
+            return console.error(err);
+        }
+        else {
+           res.json({success: true, msg: 'Survey List Displayed Successfully', surveyList: surveyList, user: req.user});
+        }
+    });
+}
+
+
 module.exports.displayAddPage = (req, res, next) => {
     res.json({success: true, msg: 'Successfully Displayed Add Page'});
 }

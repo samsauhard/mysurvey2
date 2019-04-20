@@ -37,6 +37,12 @@ export class SurveyListService {
     return this.http.get<any>(this.endpoint, this.httpOptions);
   }
 
+  public getList1(user1: User): Observable<any> {
+    this.loadToken();
+    console.log(this.http.get<any>(this.endpoint , this.httpOptions));
+    return this.http.get<any>(this.endpoint +'surveys/survey-list/user/' + user1.email, this.httpOptions);
+  }
+
    public getSurvey(survey: Survey): Observable<any> {
     this.loadToken();
     return this.http.get<any>(this.endpoint + survey.surveyid, this.httpOptions);

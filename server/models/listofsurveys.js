@@ -5,7 +5,8 @@ let listofsurveySchema = mongoose.Schema({
     surveyid: String,
     time: String,
     questions: Number,
-    points: Number
+    points: Number,
+    email : String
 },
 {
     collection: "listofsurveys"

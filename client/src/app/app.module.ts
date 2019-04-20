@@ -22,6 +22,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SurveyAnsComponent } from './pages/survey-ans/survey-ans.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MysurveysComponent } from './mysurveys/mysurveys.component';
 
 
 
@@ -41,7 +43,9 @@ export function jwtTokenGetter() {
     PagenotfoundComponent,
     RegisterComponent,
     LoginComponent,
-    SurveyAnsComponent
+    SurveyAnsComponent,
+    ProfileComponent,
+    MysurveysComponent
   ],
   imports:[
   BrowserModule,
